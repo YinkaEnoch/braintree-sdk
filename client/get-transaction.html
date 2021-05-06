@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Get Transactions details</title>
+		<link rel="stylesheet" href="styles.css" />
+		<style>
+			body {
+				padding: 2rem;
+			}
+			form {
+				border: 1px dashed #444;
+				margin-top: 2rem;
+			}
+			input {
+				display: block;
+				border: 1px solid #444;
+			}
+			button {
+				border: 1px solid #444;
+				background: none;
+				color: #444;
+				cursor: pointer;
+			}
+			button:hover {
+				background: #444;
+				color: #fff;
+			}
+
+			output {
+				display: block;
+				padding: 1rem;
+				margin-top: 1.5rem;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Get transaction details</h1>
+		<form action="/" id="" method="post">
+			<label for="tx-id">Transaction ID</label>
+			<input type="text" name="tx-id" id="tx-id" placeholder="ep7rardw" />
+
+			<button type="submit">Get Details</button>
+		</form>
+		<output></output>
+
+		<script src="https://js.braintreegateway.com/web/3.76.2/js/client.min.js"></script>
+		<script src="https://js.braintreegateway.com/web/3.76.2/js/hosted-fields.min.js"></script>
+		<script>
+			const form = document.querySelector("form");
+			const submitBtn = document.querySelector("button");
+			const input = document.querySelector("input");
+			const output = document.querySelector("output");
+
+			form.addEventListener("submit", async (e) => {
+				e.preventDefault();
+				output.textContent = "";
+
+				const url = `http://127.0.0.1:4300/api/v1/transactions/${input.value.trim()}`;
+				const res = await fetch(url);
+				const data = await res.json();
+				output.textContent = JSON.stringify(data);
+				console.log(data);
+			});
+		</script>
+	</body>
+</html>

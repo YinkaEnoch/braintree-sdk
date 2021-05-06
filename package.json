@@ -1,0 +1,25 @@
+{
+  "name": "braintree-sdk",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:client": "npx live-server --open=./client",
+    "start:server": "nodemon server/index.js"
+  },
+  "keywords": [],
+  "author": "Yinka Enoch Adedokun <adedokunyinkaenoch@gmail.com> (https://yinkaenoch.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "braintree": "^3.4.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.7"
+  }
+}
