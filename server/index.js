@@ -21,7 +21,6 @@ app.get("/api/v1/client_token", (req, res) => {
 	gateway.clientToken.generate({}, (err, response) => {
 		if (err) throw err;
 
-		console.log(response);
 		// pass clientToken to your front-end
 		const clientToken = response.clientToken;
 		res.json({ clientToken });
@@ -44,10 +43,8 @@ app.post("/api/v1/checkout", (req, res) => {
 		},
 		(err, result) => {
 			if (err) {
-				console.error(err);
 				return res.status(500).json({ err });
 			}
-			console.log(result);
 			res.status(200).json({ result });
 		}
 	);
@@ -55,10 +52,8 @@ app.post("/api/v1/checkout", (req, res) => {
 
 // Get Transaction details
 app.get("/api/v1/transactions/:id", (req, res) => {
-	console.log("ID: ", req.params.id);
 	gateway.transaction.find(req.params.id, (err, transaction) => {
 		if (err) {
-			console.error(err);
 			return res.status(500).json({ errType: err.name });
 		}
 		const { processorResponseText } = transaction;

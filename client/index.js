@@ -77,7 +77,6 @@ const checkout = async () => {
 									amount: document.querySelector("#amount").value,
 								}),
 							});
-							console.log(JSON.stringify(res));
 							const data = await res.json();
 							console.log(data);
 
