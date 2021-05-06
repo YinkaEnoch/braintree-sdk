@@ -7,5 +7,6 @@ This repo contains the client and server configuration for getting braintree SDK
 - Run `npm run start:server` to start the nodejs server
 - Run `npm run start:client` to start the client
 
-1. [List of Currencies supported by Braintree API](https://developers.braintreepayments.com/reference/general/currencies)
-2. [Payment method types](https://developers.braintreepayments.com/guides/payment-method-types-overview)
+- REFERENCES
+  1. [List of Currencies supported by Braintree API](https://developers.braintreepayments.com/reference/general/currencies)
+  2. [Payment method types](https://developers.braintreepayments.com/guides/payment-method-types-overview)
